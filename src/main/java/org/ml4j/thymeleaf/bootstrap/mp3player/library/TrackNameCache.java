@@ -10,9 +10,6 @@ import java.util.List;
 public class TrackNameCache {
     private List<Item> items;
 
-    public TrackNameCache(String trackNameCacheFileResourcePath) {
-    }
-
     public TrackNameCache() throws IOException {
         this.items = new ArrayList<>();
         URL trackPathsWithTitlesResource = TrackNameCache.class
