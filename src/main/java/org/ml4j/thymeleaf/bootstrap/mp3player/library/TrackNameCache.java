@@ -1,7 +1,6 @@
 package org.ml4j.thymeleaf.bootstrap.mp3player.library;
 
 import org.ml4j.thymeleaf.bootstrap.model.Item;
-import org.springframework.core.io.Resource;
 
 import java.io.*;
 import java.net.URL;
@@ -14,7 +13,7 @@ public class TrackNameCache {
     public TrackNameCache(String trackNameCacheFileResourcePath) {
     }
 
-    public TrackNameCache(File trackNameCacheFile) throws IOException {
+    public TrackNameCache() throws IOException {
         this.items = new ArrayList<>();
         URL trackPathsWithTitlesResource = TrackNameCache.class
                 .getClassLoader().getResource("track_paths_with_titles.txt");

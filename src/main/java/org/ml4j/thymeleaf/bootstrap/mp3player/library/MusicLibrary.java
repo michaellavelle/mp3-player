@@ -13,11 +13,13 @@ public class MusicLibrary {
     private List<Track> allTracks;
 
     public MusicLibrary(File defaultDirectory) {
-        this.defaultDirectory = defaultDirectory;
-        List<File> allMp3Files = new ArrayList<>();
-        collateAllMp3Files(allMp3Files, defaultDirectory);
-        allTracks = allMp3Files.stream().map(f -> new Track(f.getAbsolutePath())).collect(Collectors.toList());
-        Collections.sort(allTracks, Comparator.comparing(Track::getLocalFilePath));
+        if (defaultDirectory != null && defaultDirectory.exists()) {
+            this.defaultDirectory = defaultDirectory;
+            List<File> allMp3Files = new ArrayList<>();
+            collateAllMp3Files(allMp3Files, defaultDirectory);
+            allTracks = allMp3Files.stream().map(f -> new Track(f.getAbsolutePath())).collect(Collectors.toList());
+            Collections.sort(allTracks, Comparator.comparing(Track::getLocalFilePath));
+        }
     }
 
     public List<Track> getAllTracks() {

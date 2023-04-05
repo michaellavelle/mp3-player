@@ -16,13 +16,13 @@ import java.io.IOException;
 @EnableAsync
 public class MusicPlayerConfig {
 
-	public final static String TRACK_NAME_CACHE_FILE_NAME = "/Users/michael/stuff/code/checkouts/mp3-player/src/main/resources/track_paths_with_titles.txt";
+	public final static String DEFAULT_MUSIC_DIR = "/music";
+	public final static File DEFAULT_MUSIC_DIR_FILE = new File(DEFAULT_MUSIC_DIR);
 
-	public final static String DEFAULT_MUSIC_DIR = "/Users/michael/stuff/music";
 
 	@Bean
 	MusicLibrary musicLibrary() {
-		return new MusicLibrary(new File(DEFAULT_MUSIC_DIR));
+		return new MusicLibrary(DEFAULT_MUSIC_DIR_FILE);
 	}
 
 	@Bean
@@ -32,7 +32,7 @@ public class MusicPlayerConfig {
 
 	@Bean
 	TrackNameCache trackNameCache() throws IOException {
-		return new TrackNameCache(new File(TRACK_NAME_CACHE_FILE_NAME));
+		return new TrackNameCache();
 	}
 
 	@Bean
