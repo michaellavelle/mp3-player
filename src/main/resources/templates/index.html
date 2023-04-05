@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Spring Boot Thymeleaf Application - Bootstrap Autocomplete with "first-letter-of-each-word search" enabled</title>
+    <title>MP3 Player Application with "first-letter-of-each-word search" enabled</title>
 
     <link th:rel="stylesheet" th:href="@{assets/select2-develop/dist/css/select2.css}"/>
     <link th:rel="stylesheet" th:href="@{assets/select2-bootstrap4-theme-master/dist/select2-bootstrap4.css}"/>
@@ -13,7 +13,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-        <a class="navbar-brand" href="/">Thymeleaf - Bootstrap Autocomplete with "first-letter-of-each-word search" enabled</a>
+        <a class="navbar-brand" href="/">MP3 Player Application with "first-letter-of-each-word search" enabled</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
                 aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -58,7 +58,7 @@
     </div>
 
     <div class="container">
-        <h2 class="mt-5">Your chosen item: <strong th:text="${selection.label}" th:if="${selection.label != null}"></strong></h2>
+        <h2 class="mt-5">Your chosen track: <strong th:text="${selection.label}" th:if="${selection.label != null}"></strong></h2>
     </div>
 
 </div>
